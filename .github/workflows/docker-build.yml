@@ -1,0 +1,16 @@
+name: Build and Test Docker Image
+
+on:
+  push:
+    branches:
+      -main
+    pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: docker build
+        run:
+          docker build -t meme-generator .
